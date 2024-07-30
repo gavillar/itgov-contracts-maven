@@ -4,8 +4,10 @@ FROM openjdk:17-jdk-alpine
 # Defina o diretório de trabalho
 WORKDIR /app
 
+RUN mvn clean install
+
 # Copie o arquivo JAR para o contêiner
-COPY build/libs/ITGovernance-Contracts-Thymeleaf-0.0.1-SNAPSHOT-plain.jar /app.jar
+COPY target/ITGovernance-Contracts-Thymeleaf_Maven-1.0-SNAPSHOT.jar /app.jar
 
 # Comando para executar o JAR
 ENTRYPOINT ["java", "-jar", "/app.jar"]
