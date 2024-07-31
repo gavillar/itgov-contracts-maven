@@ -7,7 +7,7 @@ WORKDIR /app
 RUN mvn clean install
 
 # Copie o arquivo JAR para o contêiner
-COPY target/ITGovernance-Contracts-Thymeleaf_Maven-1.0-SNAPSHOT.jar /app.jar
+COPY out/artifacts/ITGOV-Contracts-Maven.jar /app.jar
 
 # Comando para executar o JAR
 ENTRYPOINT ["java", "-jar", "/app.jar"]
