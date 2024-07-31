@@ -17,9 +17,14 @@ public class EmployeeController {
 
 	@Autowired
 	private EmployeeService employeeService;
-	
-	// display list of employees
+
 	@GetMapping("/")
+	public String LoginPage(Model model) {
+		return "login";
+	}
+
+	// display list of employees
+	@GetMapping("/terceiros")
 	public String ViewHomePage(Model model) {
 		model.addAttribute("listEmployees", employeeService.getAllEmployees());
 		return "index";
