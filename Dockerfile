@@ -5,7 +5,8 @@ FROM openjdk:17-jdk-alpine
 WORKDIR /app
 
 # Copie o arquivo JAR para o contêiner
-COPY target/*.jar /app.jar
+COPY target/ITGOV-Contracts-Maven-0.0.1-SNAPSHOT.jar /app.jar
+
 
 # Comando para executar o JAR
 ENTRYPOINT ["java", "-jar", "/app.jar"]
