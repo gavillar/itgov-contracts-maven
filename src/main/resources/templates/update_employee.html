@@ -29,7 +29,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="https://www.partagebetim.com.br/wp-content/uploads/sites/3/2023/08/LOGO-TRAVELEX.png" alt="Logo Travelex" width="400" height="100">
+            <img src="https://img.freepik.com/vetores-premium/icone-de-linha-colorida-do-conceito-2-do-contrato-ilustracao-simples-elemento-amarelo-e-azul-contrato-conceito-esboco-simbolo-design_159242-3623.jpg" alt="Logo" width="150" height="150">
             <h1>Sistema de Contratos de Terceiros</h1>
         </div>
 
@@ -39,9 +39,9 @@
 
         <form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="post">
             <input type="hidden" th:field="*{id}" /> <!-- Campo oculto para o ID -->
-			<input type="text" th:field="*{legalOps}" placeholder="NÃºmero LegalOps" class="form-control mb-4 col-4">
-            <input type="text" th:field="*{orderService}" placeholder="NÃºmero OS" class="form-control mb-4 col-4">
-            <input type="text" th:field="*{function}" placeholder="Cargo" class="form-control mb-4 col-4">
+			<input type="text" th:field="*{legalOps}" placeholder="Número LegalOps" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{orderService}" placeholder="Número OS" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{functionName}" placeholder="Cargo" class="form-control mb-4 col-4">
             <input type="text" th:field="*{role}" placeholder="Papel" class="form-control mb-4 col-4">
             <input type="text" th:field="*{completeName}" placeholder="Nome Completo" class="form-control mb-4 col-4">
             <input type="text" th:field="*{cpf}" placeholder="CPF" class="form-control mb-4 col-4">
@@ -49,21 +49,21 @@
             <input type="text" th:field="*{fup}" placeholder="FUP" class="form-control mb-4 col-4">
             <input type="text" th:field="*{statusOrderService}" placeholder="Status OS" class="form-control mb-4 col-4">
             <input type="text" th:field="*{vendor}" placeholder="Vendor" class="form-control mb-4 col-4">
-            <input type="date" th:field="*{initialDateLegalOps}" placeholder="Data InÃ­cio LegalOps" class="form-control mb-4 col-4">
+            <input type="date" th:field="*{initialDateLegalOps}" placeholder="Data Início LegalOps" class="form-control mb-4 col-4">
             <input type="date" th:field="*{finalDateLegalOps}" placeholder="Data Fim LegalOps" class="form-control mb-4 col-4">
-            <input type="date" th:field="*{initialDateRecourse}" placeholder="Data InÃ­cio do Recurso" class="form-control mb-4 col-4">
-            <input type="date" th:field="*{initialDateContract}" placeholder="InÃ­cio do Contrato" class="form-control mb-4 col-4">
+            <input type="date" th:field="*{initialDateRecourse}" placeholder="Data Início do Recurso" class="form-control mb-4 col-4">
+            <input type="date" th:field="*{initialDateContract}" placeholder="Início do Contrato" class="form-control mb-4 col-4">
             <input type="date" th:field="*{finalDateContract}" placeholder="Data final do Contrato" class="form-control mb-4 col-4">
             <input type="date" th:field="*{warningMaturity}" placeholder="Aviso do Vencimento" class="form-control mb-4 col-4">
-            <input type="date" th:field="*{exitDate}" placeholder="Data saÃ­da" class="form-control mb-4 col-4">
+            <input type="date" th:field="*{exitDate}" placeholder="Data saída" class="form-control mb-4 col-4">
             <input type="text" th:field="*{valueContract}" placeholder="Valor" class="form-control mb-4 col-4">
-            <input type="text" th:field="*{analysisHR}" placeholder="AnÃ¡lise RH" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{analysisHR}" placeholder="Análise RH" class="form-control mb-4 col-4">
             <input type="text" th:field="*{vertical}" placeholder="Vertical" class="form-control mb-4 col-4">
             <input type="text" th:field="*{squad}" placeholder="Squad" class="form-control mb-4 col-4">
             <input type="text" th:field="*{bU}" placeholder="BU" class="form-control mb-4 col-4">
-            <input type="text" th:field="*{alocation}" placeholder="AlocaÃ§Ã£o" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{alocation}" placeholder="Alocação" class="form-control mb-4 col-4">
             <input type="text" th:field="*{borrowedTo}" placeholder="Emprestado Para" class="form-control mb-4 col-4">
-            <input type="text" th:field="*{observation}" placeholder="ObservaÃ§Ã£o" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{observation}" placeholder="Observação" class="form-control mb-4 col-4">
             <input type="text" th:field="*{oldEmail}" placeholder="Email antigo" class="form-control mb-4 col-4">
             <input type="text" th:field="*{manager}" placeholder="Gestor Direto" class="form-control mb-4 col-4">
             <button type="submit" class="btn btn-info col-2">Atualizar</button>

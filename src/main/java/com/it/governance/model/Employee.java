@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "employees")
+@Table(name = "third-party-employee")
 public class Employee {
 	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,8 +21,8 @@ public class Employee {
 	@Column(name = "orderService")
 	private String orderService;
 	
-	@Column(name = "function")
-	private String function;
+	@Column(name = "functionName")
+	private String functionName;
 	
 	@Column(name = "role")
 	private String role;
@@ -115,12 +115,8 @@ public class Employee {
 	public void setOrderService(String orderService) {
 		this.orderService = orderService;
 	}
-	public String getFunction() {
-		return function;
-	}
-	public void setFunction(String function) {
-		this.function = function;
-	}
+	public String getFunctionName() { return functionName;}
+	public void setFunctionName(String functionName) {this.functionName = functionName; }
 	public String getRole() {
 		return role;
 	}
