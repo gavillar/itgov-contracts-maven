@@ -74,7 +74,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>com.it.governance.It-govContractsMavenApplication</mainClass>
+							<mainClass>com.it.governance.ItgovContractsMavenApplication</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
