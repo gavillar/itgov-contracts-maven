@@ -4,9 +4,6 @@
 # Log files
 *.log
 
-# Maven
-target/
-
 # Eclipse
 .project
 .classpath
