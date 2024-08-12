@@ -22,7 +22,7 @@ public class EmployeeController {
 	}
 
 	// display list of employees
-	@GetMapping("/terceiros")
+	@GetMapping("/showThirdPartyEmployees")
 	public String ViewHomePage(Model model) {
 		model.addAttribute("listEmployees", employeeService.getAllEmployees());
 		return "index";
@@ -39,7 +39,7 @@ public class EmployeeController {
 	public String saveEmployee(@ModelAttribute("employee") Employee employee) {
 		// save employee to database
 		employeeService.saveEmployee(employee);
-		return "redirect:/";
+		return "redirect:/showThirdPartyEmployees";
 	}
 	
 	@GetMapping("/showFormForUpdate/{id}")
