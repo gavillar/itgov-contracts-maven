@@ -11,13 +11,11 @@ public class LoginController {
     public String processLogin(@RequestParam("email") String email,
                                @RequestParam("password") String password,
                                Model model) {
-
-        if ("user@example.com".equals(email) && "password".equals(password)) {
-            return "redirect:/showThirdEmployees";
+        if ("gv@gmail.com".equals(email) && "123".equals(password)) {
+            return "redirect:/";
         } else {
             model.addAttribute("error", "Email ou senha inválidos");
             return "login";
         }
     }
-
 }

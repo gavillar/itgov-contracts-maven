@@ -16,16 +16,16 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
 
-	@GetMapping("/")
+	@GetMapping("/login")
 	public String LoginPage(Model model) {
 		return "login";
 	}
 
 	// display list of employees
-	@GetMapping("/showThirdPartyEmployees")
+	@GetMapping("/showThirdPartEmployees")
 	public String ViewHomePage(Model model) {
 		model.addAttribute("listEmployees", employeeService.getAllEmployees());
-		return "index";
+		return "third_party_employees";
 	}
 	
 	@GetMapping("/showNewEmployeeForm")
@@ -39,7 +39,7 @@ public class EmployeeController {
 	public String saveEmployee(@ModelAttribute("employee") Employee employee) {
 		// save employee to database
 		employeeService.saveEmployee(employee);
-		return "redirect:/showThirdPartyEmployees";
+		return "redirect:/showThirdPartEmployees";
 	}
 	
 	@GetMapping("/showFormForUpdate/{id}")
@@ -52,6 +52,6 @@ public class EmployeeController {
 	@GetMapping("/deleteEmployee/{id}")
 	public String deleteEmployee(@PathVariable ( value = "id") long id, Model model) {
 		this.employeeService.deleteEmployeeById(id);
-		return "redirect:/";
+		return "redirect:/showThirdPartEmployees";
 	}
 }
