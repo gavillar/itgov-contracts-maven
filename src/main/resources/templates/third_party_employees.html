@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terceiros</title>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/bootstrap.css">
     <link rel="stylesheet" href="/assets/vendors/iconly/bold.css">
     <link rel="stylesheet" href="/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
@@ -20,34 +18,39 @@
             margin-left: 20px;
         }
 
-        .header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .header img {
-            margin-right: 15px;
-        }
-
-        .table-container {
-            background-color: #dcdcdc;
-            border-radius: 8px;
-            width: 1500px;
-            height: 800px;
-            overflow: auto;
-            padding: 15px;
-        }
-
         .table-responsive {
-            background-color: #dcdcdc;
-            border-radius: 8px;
-            width: 100%;
-            height: auto;
-            padding: 15px;
+            max-height: 800px;
+            overflow-y: auto;
+            overflow-x: auto;
         }
 
+        thead, tfoot {
+        background-color: #dcdcdc;
+        color: white;
 
+        }
+
+        thead th {
+        position: sticky;
+        top: 0;
+        background-color: #c0c0c0 !important;
+        color: black;
+        z-index: 10;
+}
+
+        /* Estilização geral da tabela */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #dcdcdc;
+            position: relative;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
 
         .btn-add {
             display: block;
@@ -71,49 +74,47 @@
             <div class="sidebar-menu">
                 <ul class="menu">
                     <li class="sidebar-title">Menu</li>
-
-
-                        <a href="/" class='sidebar-link'>
-                            <i class="bi bi-grid-fill"></i>
-                            <span>Dashboard</span>
-                        </a>
+                    <a href="/" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Dashboard</span>
+                    </a>
                     </li>
-
-                    <li class="sidebar-item active ">
+                    <li class="sidebar-item active">
                         <a href="/showThirdPartEmployees" class='sidebar-link'>
                             <i class="bi bi-grid-fill"></i>
                             <span>Terceiros</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="/acessos-prestadores" class='sidebar-link'>
-                            <i class="bi bi-grid-fill"></i>
-                            <span>Acessos Prestadores</span>
-                        </a>
+                    <a href="/terceiros" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Acessos Prestadores</span>
+                    </a>
+
                     </li>
-                    <li>
-                        <a href="/CLT" class='sidebar-link'>
-                            <i class="bi bi-grid-fill"></i>
-                            <span>CLT</span>
-                        </a>
+
+                    <a href="/CLT" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>CLT</span>
+                    </a>
                     </li>
-                    <li>
-                        <a href="/visao-squads" class='sidebar-link'>
-                            <i class="bi bi-grid-fill"></i>
-                            <span>Visão das Squads</span>
-                        </a>
+
+                    <a href="/terceiros" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Visão das Squads</span>
+                    </a>
                     </li>
-                    <li>
-                        <a href="/funcionarios" class='sidebar-link'>
-                            <i class="bi bi-grid-fill"></i>
-                            <span>Funcionários</span>
-                        </a>
+
+
+                    <a href="/terceiros" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Funcionários</span>
+                    </a>
                     </li>
-                    <li>
-                        <a href="/historico-substituicoes" class='sidebar-link'>
-                            <i class="bi bi-grid-fill"></i>
-                            <span>Histórico de Substituições</span>
-                        </a>
+
+                    <a href="/terceiros" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Histórico de Substituições</span>
+                    </a>
                     </li>
                 </ul>
             </div>
@@ -132,90 +133,88 @@
             <div class="container">
                 <a th:href="@{/showNewEmployeeForm}" class="btn btn-primary btn-sm btn-add">Adicionar Terceiro ></a>
 
-                <div class="table-container">
-                    <div class="table-responsive">
-                        <table class="table table-bordered">
-                            <thead>
-                            <tr>
-                                <th>Alterar</th>
-                                <th>Apagar</th>
-                                <th>ID</th>
-                                <th>LegalOps</th>
-                                <th>OS</th>
-                                <th>Cargo</th>
-                                <th>Papel</th>
-                                <th>Nome Completo</th>
-                                <th>CPF</th>
-                                <th>Email</th>
-                                <th>FUP</th>
-                                <th>Status OS</th>
-                                <th>Vendor</th>
-                                <th>Data Início LegalOps</th>
-                                <th>Data Fim LegalOps</th>
-                                <th>Data Início do Recurso</th>
-                                <th>Data Fim LegalOps</th>
-                                <th>Início do Contrato</th>
-                                <th>Final do Contrato</th>
-                                <th>Aviso do Vencimento</th>
-                                <th>Data Saída</th>
-                                <th>Valor</th>
-                                <th>Análises RH</th>
-                                <th>Vertical</th>
-                                <th>Squad</th>
-                                <th>BU</th>
-                                <th>Alocação</th>
-                                <th>Emprestado Para</th>
-                                <th>Observação</th>
-                                <th>Gestor Direto</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr th:each="employee : ${listEmployees}">
-                                <td><a th:href="@{/showFormForUpdate/{id}(id=${employee.id})}" class="btn btn-primary btn-sm">Alterar</a></td>
-                                <td>
-                                    <script type="text/javascript">
-                                        function confirmDeletion() {
-                                            return confirm("Tem certeza de que deseja excluir este funcionário?");
-                                        }
-                                    </script>
-                                    <a th:href="@{/deleteEmployee/{id}(id=${employee.id})}"
-                                       class="btn btn-danger btn-sm"
-                                       onclick="return confirmDeletion();">
-                                        Apagar
-                                    </a>
-                                </td>
-                                <td th:text="${employee.id}"></td>
-                                <td th:text="${employee.legalOps}"></td>
-                                <td th:text="${employee.orderService}"></td>
-                                <td th:text="${employee.functionName}"></td>
-                                <td th:text="${employee.role}"></td>
-                                <td th:text="${employee.completeName}"></td>
-                                <td th:text="${employee.cpf}"></td>
-                                <td th:text="${employee.email}"></td>
-                                <td th:text="${employee.fup}"></td>
-                                <td th:text="${employee.statusOrderService}"></td>
-                                <td th:text="${employee.vendor}"></td>
-                                <td th:text="${employee.initialDateLegalOps}"></td>
-                                <td th:text="${employee.finalDateLegalOps}"></td>
-                                <td th:text="${employee.initialDateRecourse}"></td>
-                                <td th:text="${employee.finalDateLegalOps}"></td>
-                                <td th:text="${employee.initialDateContract}"></td>
-                                <td th:text="${employee.finalDateContract}"></td>
-                                <td th:text="${employee.warningMaturity}"></td>
-                                <td th:text="${employee.exitDate}"></td>
-                                <td th:text="${employee.valueContract}"></td>
-                                <td th:text="${employee.analysisHR}"></td>
-                                <td th:text="${employee.vertical}"></td>
-                                <td th:text="${employee.squad}"></td>
-                                <td th:text="${employee.bU}"></td>
-                                <td th:text="${employee.alocation}"></td>
-                                <td th:text="${employee.borrowedTo}"></td>
-                                <td th:text="${employee.observation}"></td>
-                                <td th:text="${employee.manager}"></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Alterar</th>
+                            <th>Apagar</th>
+                            <th>ID</th>
+                            <th>LegalOps</th>
+                            <th>OS</th>
+                            <th>Cargo</th>
+                            <th>Papel</th>
+                            <th>Nome Completo</th>
+                            <th>CPF</th>
+                            <th>Email</th>
+                            <th>FUP</th>
+                            <th>Status OS</th>
+                            <th>Vendor</th>
+                            <th>Data Início LegalOps</th>
+                            <th>Data Fim LegalOps</th>
+                            <th>Data Início do Recurso</th>
+                            <th>Data Fim LegalOps</th>
+                            <th>Início do Contrato</th>
+                            <th>Final do Contrato</th>
+                            <th>Aviso do Vencimento</th>
+                            <th>Data Saída</th>
+                            <th>Valor</th>
+                            <th>Análises RH</th>
+                            <th>Vertical</th>
+                            <th>Squad</th>
+                            <th>BU</th>
+                            <th>Alocação</th>
+                            <th>Emprestado Para</th>
+                            <th>Observação</th>
+                            <th>Gestor Direto</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="employee : ${listEmployees}">
+                            <td><a th:href="@{/showFormForUpdate/{id}(id=${employee.id})}" class="btn btn-primary btn-sm">Alterar</a></td>
+                            <td>
+                                <script type="text/javascript">
+                                    function confirmDeletion() {
+                                        return confirm("Tem certeza de que deseja excluir este funcionário?");
+                                    }
+                                </script>
+                                <a th:href="@{/deleteEmployee/{id}(id=${employee.id})}"
+                                   class="btn btn-danger btn-sm"
+                                   onclick="return confirmDeletion();">
+                                    Apagar
+                                </a>
+                            </td>
+                            <td th:text="${employee.id}"></td>
+                            <td th:text="${employee.legalOps}"></td>
+                            <td th:text="${employee.orderService}"></td>
+                            <td th:text="${employee.functionName}"></td>
+                            <td th:text="${employee.role}"></td>
+                            <td th:text="${employee.completeName}"></td>
+                            <td th:text="${employee.cpf}"></td>
+                            <td th:text="${employee.email}"></td>
+                            <td th:text="${employee.fup}"></td>
+                            <td th:text="${employee.statusOrderService}"></td>
+                            <td th:text="${employee.vendor}"></td>
+                            <td th:text="${employee.initialDateLegalOps}"></td>
+                            <td th:text="${employee.finalDateLegalOps}"></td>
+                            <td th:text="${employee.initialDateRecourse}"></td>
+                            <td th:text="${employee.finalDateLegalOps}"></td>
+                            <td th:text="${employee.initialDateContract}"></td>
+                            <td th:text="${employee.finalDateContract}"></td>
+                            <td th:text="${employee.warningMaturity}"></td>
+                            <td th:text="${employee.exitDate}"></td>
+                            <td th:text="${employee.valueContract}"></td>
+                            <td th:text="${employee.analysisHR}"></td>
+                            <td th:text="${employee.vertical}"></td>
+                            <td th:text="${employee.squad}"></td>
+                            <td th:text="${employee.bU}"></td>
+                            <td th:text="${employee.alocation}"></td>
+                            <td th:text="${employee.borrowedTo}"></td>
+                            <td th:text="${employee.observation}"></td>
+                            <td th:text="${employee.manager}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
