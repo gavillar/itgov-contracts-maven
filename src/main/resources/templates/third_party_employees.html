@@ -14,134 +14,159 @@
     <link rel="shortcut icon" href="/assets/images/favicon.svg" type="image/x-icon">
 
     <style>
-        #main {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        min-height: 100vh;
-        padding: 20px;
-        width: 100%;
-        box-sizing: border-box;
+
+     #main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #app {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f8f9fa;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #header img {
+            height: 50px;
+        }
+
+        #sidebar {
+            display: flex;
+        }
+
+        .sidebar-link {
+            margin: 0 10px;
+            color: #333;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar-link:hover {
+            text-decoration: underline;
+        }
+
+
+          thead, tfoot {
+        background-color: #dcdcdc;
+        color: white;
     }
 
-    .table-responsive {
-        max-height: 700px;
-        width: 90%;
+    thead th {
+        position: sticky;
+        top: 0;
+        background-color: #c0c0c0 !important;
+        color: black;
+        z-index: 10;
+    }
+
+        .table-responsive {
+        background-color: #f0f0f0;
+        max-height: 800px;
+        max-width: 2000px;
         overflow-y: auto;
         overflow-x: auto;
-        margin-top: 20px;
     }
-
-    @media (max-width: 1200px) {
-        .table-responsive {
-            width: 100%;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .table-responsive {
-            width: 100%;
-        }
-
-        th, td {
-            font-size: 12px;
-            padding: 4px;
-        }
-
         .btn-add {
-            width: 100%;
-            font-size: 14px;
-        }
-    }
-
-    @media (max-width: 576px) {
-        .table-responsive {
-            width: 100%;
+            margin-bottom: 20px;
         }
 
-        th, td {
-            font-size: 10px;
-            padding: 2px;
+        @media (max-width: 1200px) {
+            .table-responsive {
+                width: 100%;
+            }
         }
 
-        .btn-add {
-            width: 100%;
-            font-size: 12px;
-        }
-    }
+        @media (max-width: 768px) {
+            .table-responsive {
+                width: 100%;
+            }
 
-</style>
+            th, td {
+                font-size: 12px;
+                padding: 4px;
+            }
+
+            .btn-add {
+                width: 100%;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .table-responsive {
+                width: 100%;
+            }
+
+            th, td {
+                font-size: 10px;
+                padding: 2px;
+            }
+
+            .btn-add {
+                width: 100%;
+                font-size: 12px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 <div id="app">
-    <div id="sidebar" class="active">
-        <div class="sidebar-wrapper active">
-            <div class="text-center">
-                <a href="index.html"><img src="/assets/images/logo/logo-design2.png" width="200" alt="Logo"></a>
-            </div>
-            <div class="sidebar-menu">
-                <ul class="menu">
-                    <li class="sidebar-title">Menu</li>
-                    <a href="/" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
-                        <span>Dashboard</span>
-                    </a>
-                    </li>
-                    <li class="sidebar-item active">
-                        <a href="/showThirdPartEmployees" class='sidebar-link'>
-                            <i class="bi bi-grid-fill"></i>
-                            <span>Terceiros</span>
-                        </a>
-                    </li>
-                    <a href="/terceiros" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
-                    <span>Acessos Prestadores</span>
-                    </a>
-
-                    </li>
-
-                    <a href="/CLT" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
-                        <span>CLT</span>
-                    </a>
-                    </li>
-
-                    <a href="/terceiros" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
-                        <span>Visão das Squads</span>
-                    </a>
-                    </li>
-
-
-                    <a href="/terceiros" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
-                        <span>Funcionários</span>
-                    </a>
-                    </li>
-
-                    <a href="/terceiros" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
-                        <span>Histórico de Substituições</span>
-                    </a>
-                    </li>
-                </ul>
-            </div>
-            <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+    <header id="header">
+        <div id="sidebar">
+            <a href="/" class='sidebar-link'>
+                <i class="bi bi-grid-fill"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="/showThirdPartEmployees" class='sidebar-link'>
+                <i class="bi bi-grid-fill"></i>
+                <span>Terceiros</span>
+            </a>
+            <a href="/terceiros" class='sidebar-link'>
+                <i class="bi bi-grid-fill"></i>
+                <span>Acessos Prestadores</span>
+            </a>
+            <a href="/CLT" class='sidebar-link'>
+                <i class="bi bi-grid-fill"></i>
+                <span>CLT</span>
+            </a>
+            <a href="/terceiros" class='sidebar-link'>
+                <i class="bi bi-grid-fill"></i>
+                <span>Visão das Squads</span>
+            </a>
+            <a href="/terceiros" class='sidebar-link'>
+                <i class="bi bi-grid-fill"></i>
+                <span>Funcionários</span>
+            </a>
+            <a href="/terceiros" class='sidebar-link'>
+                <i class="bi bi-grid-fill"></i>
+                <span>Histórico de Substituições</span>
+            </a>
         </div>
-    </div>
+    </header>
 
     <div id="main">
-        <header class="mb-3">
-            <a href="#" class="burger-btn d-block d-xl-none">
-                <i class="bi bi-justify fs-3"></i>
-            </a>
-        </header>
-
         <div class="page-heading">
             <div class="container">
                 <a th:href="@{/showNewEmployeeForm}" class="btn btn-primary btn-sm btn-add">Adicionar Terceiro ></a>
-
                 <div class="table-responsive">
                     <table class="table table-bordered">
                         <thead>
@@ -232,9 +257,4 @@
 
 <script src="/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 <script src="/assets/js/bootstrap.bundle.min.js"></script>
-<script src="/assets/vendors/apexcharts/apexcharts.js"></script>
-<script src="/assets/js/pages/dashboard.js"></script>
-<script src="/assets/js/main.js"></script>
-
-</body>
-</html>
+<script src="/assets/vendors/ap
