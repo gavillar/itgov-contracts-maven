@@ -1,0 +1,43 @@
+/* login.css */
+
+/* Adiciona um fundo leve ao corpo da página */
+body {
+    background-color: #f4f4f4;
+}
+
+/* Ajusta a altura da página e centraliza o conteúdo */
+.container {
+    height: 100vh;
+    max-width: 100%;
+}
+
+/* Adiciona margem para o título */
+h1 {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* Adiciona sombra e arredondamento ao cartão */
+.card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajusta o padding do corpo do cartão */
+.card-body {
+    padding: 2rem;
+}
+
+/* Ajusta o botão */
+.btn-block {
+    width: 100%;
+}
+
+/* Estilo adicional para links */
+.text-muted {
+    color: #6c757d;
+}
+
+.text-muted:hover {
+    text-decoration: underline;
+}
