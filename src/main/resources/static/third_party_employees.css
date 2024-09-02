@@ -1,0 +1,89 @@
+#main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.table-responsive {
+    background-color: #f0f0f0;
+    max-height: calc(100vh - 80px);
+    width: calc(100% - 80px);
+    overflow-y: auto;
+    margin: auto;
+    position: relative;
+}
+
+thead, tfoot {
+    background-color: #dcdcdc;
+    color: white;
+}
+
+thead th {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #c0c0c0 !important;
+    color: black;
+    z-index: 5;
+}
+
+.sidebar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.table-responsive tbody tr {
+    background-color: #d0d0d0;
+}
+
+.table-responsive tbody tr:nth-child(even) {
+    background-color: #c0c0c0;
+}
+
+.table-responsive tbody tr:nth-child(odd) {
+    background-color: #d0d0d0;
+}
+
+.btn-add {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1200px) {
+    .table-responsive {
+        width: calc(100% - 80px);
+    }
+}
+
+@media (max-width: 768px) {
+    .table-responsive {
+        width: calc(100% - 80px);
+    }
+
+    th, td {
+        font-size: 12px;
+        padding: 4px;
+    }
+
+    .btn-add {
+        width: 100%;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .table-responsive {
+        width: calc(100% - 80px);
+    }
+
+    th, td {
+        font-size: 10px;
+        padding: 2px;
+    }
+
+    .btn-add {
+        width: 100%;
+        font-size: 12px;
+    }
+}
