@@ -13,78 +13,30 @@
     <link rel="stylesheet" href="/assets/css/app.css">
     <link rel="shortcut icon" href="/assets/images/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="third_party_employees.css">
-
 </head>
 
 <body>
+
 <div id="app">
-    <div id="sidebar" class="active">
-        <div class="sidebar-wrapper active">
-            <div class="text-center">
-                <a href="dashboard.html" ><img src="/assets/images/logo/logo-design2.png" width="200" alt="Logo" srcset=""></a>
-
-            </div>
-            <div class="sidebar-menu">
-                <ul class="menu">
-                    <li class="sidebar-title">Menu</li>
-
-
-                    <a href="/" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
-                        <span>Dashboard</span>
-                    </a>
-                    </li>
-
-                    <li class="sidebar-item active ">
-                        <a href="/showThirdPartEmployees" class='sidebar-link'>
-                            <i class="bi bi-grid-fill"></i>
-                            <span>Terceiros</span>
-                        </a>
-                    </li>
-
-                    <a href="/terceiros" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
-                        <span>Acessos Prestadores</span>
-                    </a>
-                    </li>
-
-                    <a href="/CLT" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
-                        <span>CLT</span>
-                    </a>
-                    </li>
-
-                    <a href="/terceiros" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
-                        <span>Visão das Squads</span>
-                    </a>
-                    </li>
-
-
-                    <a href="/terceiros" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
-                        <span>Funcionários</span>
-                    </a>
-                    </li>
-
-                    <a href="/terceiros" class='sidebar-link'>
-                        <i class="bi bi-grid-fill"></i>
-                        <span>Histórico de Substituições</span>
-                    </a>
-                    </li>
-
-
-
-                </ul>
-            </div>
-            <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+    <div id="top-menu">
+        <div class="logo">
+            <a href="dashboard.html"><img src="/assets/images/logo/logo-design2.png" width="150" alt="Logo"></a>
         </div>
+        <ul class="menu">
+            <li><a href="/"><i class="bi bi-grid-fill"></i> Dashboard</a></li>
+            <li class="active"><a href="/showThirdPartEmployees"><i class="bi bi-grid-fill"></i> Terceiros</a></li>
+            <li><a href="/terceiros"><i class="bi bi-grid-fill"></i> Acessos Prestadores</a></li>
+            <li><a href="/CLT"><i class="bi bi-grid-fill"></i> CLT</a></li>
+            <li><a href="/terceiros"><i class="bi bi-grid-fill"></i> Visão das Squads</a></li>
+            <li><a href="/terceiros"><i class="bi bi-grid-fill"></i> Funcionários</a></li>
+            <li><a href="/terceiros"><i class="bi bi-grid-fill"></i> Histórico de Substituições</a></li>
+        </ul>
     </div>
-    </header>
+</div>
 
-    <div id="main">
-        <div class="page-heading">
-            <a th:href="@{/showNewEmployeeForm}" class="btn btn-primary btn-sm btn-add">Adicionar Terceiro ></a>
+    <div class="parent">
+        <div class="table-third-party-employees">
+            <a th:href="@{/showNewEmployeeForm}" class="btn btn-primary btn-sm btn-add">Adicionar contrato ></a>
             <table class="table table-bordered table-responsive">
                 <thead>
                 <tr>
@@ -126,7 +78,7 @@
                     <td>
                         <script type="text/javascript">
                             function confirmDeletion() {
-                                return confirm("Tem certeza de que deseja excluir este funcionário?");
+                                return confirm("Tem certeza de que deseja excluir este contrato ?");
                             }
                         </script>
                         <a th:href="@{/deleteEmployee/{id}(id=${employee.id})}"
@@ -168,26 +120,7 @@
             </table>
         </div>
     </div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const sidebar = document.querySelector('.sidebar');
-    const tableWrapper = document.querySelector('.table-responsive');
-
-    tableWrapper.addEventListener('scroll', function() {
-        const scrollLeft = tableWrapper.scrollLeft;
-        const sidebarWidth = sidebar.offsetWidth;
-
-        // Se o scroll for maior que a largura do sidebar, esconder o sidebar
-        if (scrollLeft > sidebarWidth) {
-            sidebar.classList.add('sidebar-hidden');
-        } else {
-            sidebar.classList.remove('sidebar-hidden');
-        }
-    });
-});
-</script>
+    </div>
 
 <script src="/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 <script src="/assets/js/bootstrap.bundle.min.js"></script>
