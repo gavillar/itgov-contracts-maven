@@ -54,7 +54,7 @@
 
 .table-third-party-employees {
     background-color: #f0f0f0;
-    max-height: calc(90vh - 100px);
+    max-height: calc(99vh - 100px);
     width: 99%;
     overflow-y: auto;
     margin: 0 auto;
