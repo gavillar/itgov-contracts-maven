@@ -11,15 +11,10 @@ import com.it.governance.service.EmployeeService;
 
 
 @Controller
-public class EmployeeController {
+public class ThirdPartyEmployeeController {
 
 	@Autowired
 	private EmployeeService employeeService;
-
-	@GetMapping("/login")
-	public String LoginPage(Model model) {
-		return "login";
-	}
 
 	// display list of employees
 	@GetMapping("/showThirdPartEmployees")
