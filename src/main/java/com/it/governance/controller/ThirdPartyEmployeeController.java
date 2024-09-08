@@ -26,7 +26,7 @@ public class ThirdPartyEmployeeController {
 	@GetMapping("/showNewEmployeeForm")
 	public String showEmployeeForm(Model model) {
 		ThirdPartyEmployee thirdPartyEmployee = new ThirdPartyEmployee();
-		model.addAttribute("employee", thirdPartyEmployee);
+		model.addAttribute("thirdPartyEmployee", thirdPartyEmployee);
 		return "new_employee";
 	}
 	

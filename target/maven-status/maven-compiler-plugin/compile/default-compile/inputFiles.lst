@@ -1,8 +1,11 @@
-C:\Users\gabri\Documents\workspace-spring-tool-suite-4-4.24.0.RELEASE\Maven project\ITGOV-Contracts-Maven\src\main\java\com\it\governance\controller\EmployeeController.java
 C:\Users\gabri\Documents\workspace-spring-tool-suite-4-4.24.0.RELEASE\Maven project\ITGOV-Contracts-Maven\src\main\java\com\it\governance\controller\HomeController.java
 C:\Users\gabri\Documents\workspace-spring-tool-suite-4-4.24.0.RELEASE\Maven project\ITGOV-Contracts-Maven\src\main\java\com\it\governance\controller\LoginController.java
+C:\Users\gabri\Documents\workspace-spring-tool-suite-4-4.24.0.RELEASE\Maven project\ITGOV-Contracts-Maven\src\main\java\com\it\governance\controller\ThirdPartyEmployeeController.java
+C:\Users\gabri\Documents\workspace-spring-tool-suite-4-4.24.0.RELEASE\Maven project\ITGOV-Contracts-Maven\src\main\java\com\it\governance\controller\ThirdPartyEmployeeSubstituteController.java
 C:\Users\gabri\Documents\workspace-spring-tool-suite-4-4.24.0.RELEASE\Maven project\ITGOV-Contracts-Maven\src\main\java\com\it\governance\ItgovContractsMavenApplication.java
-C:\Users\gabri\Documents\workspace-spring-tool-suite-4-4.24.0.RELEASE\Maven project\ITGOV-Contracts-Maven\src\main\java\com\it\governance\model\Employee.java
-C:\Users\gabri\Documents\workspace-spring-tool-suite-4-4.24.0.RELEASE\Maven project\ITGOV-Contracts-Maven\src\main\java\com\it\governance\repository\EmployeeRepository.java
+C:\Users\gabri\Documents\workspace-spring-tool-suite-4-4.24.0.RELEASE\Maven project\ITGOV-Contracts-Maven\src\main\java\com\it\governance\model\ThirdPartyEmployee.java
+C:\Users\gabri\Documents\workspace-spring-tool-suite-4-4.24.0.RELEASE\Maven project\ITGOV-Contracts-Maven\src\main\java\com\it\governance\model\ThirdPartySubstituteEmployee.java
+C:\Users\gabri\Documents\workspace-spring-tool-suite-4-4.24.0.RELEASE\Maven project\ITGOV-Contracts-Maven\src\main\java\com\it\governance\repository\SubstituteThirdPartyEmployee.java
+C:\Users\gabri\Documents\workspace-spring-tool-suite-4-4.24.0.RELEASE\Maven project\ITGOV-Contracts-Maven\src\main\java\com\it\governance\repository\ThirdPartyEmployeeRepository.java
 C:\Users\gabri\Documents\workspace-spring-tool-suite-4-4.24.0.RELEASE\Maven project\ITGOV-Contracts-Maven\src\main\java\com\it\governance\service\EmployeeService.java
 C:\Users\gabri\Documents\workspace-spring-tool-suite-4-4.24.0.RELEASE\Maven project\ITGOV-Contracts-Maven\src\main\java\com\it\governance\service\EmployeeServiceImpl.java
