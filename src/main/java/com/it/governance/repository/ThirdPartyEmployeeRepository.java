@@ -1,11 +1,10 @@
 package com.it.governance.repository;
 
+import com.it.governance.model.ThirdPartyEmployee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.it.governance.model.Employee;
-
 @Repository
-public interface EmployeeRepository extends JpaRepository<Employee, Long> {
+public interface ThirdPartyEmployeeRepository extends JpaRepository<ThirdPartyEmployee, Long> {
 
 }

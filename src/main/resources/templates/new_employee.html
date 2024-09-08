@@ -53,7 +53,7 @@
         <hr>
         <h1>Cadastrar OS</h1>
 
-        <form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="post">
+        <form action="#" th:action="@{/saveEmployee}" th:object="${thirdPartyEmployee}" method="post">
             <input type="text" th:field="*{legalOps}" placeholder="Numero LegalOps" class="form-control mb-4 col-4">
             <input type="text" th:field="*{orderService}" placeholder="Numero OS" class="form-control mb-4 col-4">
             <input type="text" th:field="*{functionName}" placeholder="Cargo" class="form-control mb-4 col-4">

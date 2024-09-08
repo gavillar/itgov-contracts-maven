@@ -24,12 +24,12 @@
         </div>
         <ul class="menu">
             <li><a href="/"><i class="bi bi-grid-fill"></i> Dashboard</a></li>
-            <li class="active"><a href="/showThirdPartEmployees"><i class="bi bi-grid-fill"></i> Terceiros</a></li>
-            <li><a href="/terceiros"><i class="bi bi-grid-fill"></i> Acessos Prestadores</a></li>
+            <li class="active"><a href="/showThirdPartyEmployees"><i class="bi bi-grid-fill"></i> Terceiros</a></li>
+            <li><a href="/"><i class="bi bi-grid-fill"></i> Acessos Prestadores</a></li>
             <li><a href="/CLT"><i class="bi bi-grid-fill"></i> CLT</a></li>
             <li><a href="/terceiros"><i class="bi bi-grid-fill"></i> Visão das Squads</a></li>
             <li><a href="/terceiros"><i class="bi bi-grid-fill"></i> Funcionários</a></li>
-            <li><a href="/terceiros"><i class="bi bi-grid-fill"></i> Histórico de Substituições</a></li>
+            <li><a href="/showSubstituionHistoryEmployees"><i class="bi bi-grid-fill"></i> Histórico de Substituições</a></li>
         </ul>
     </div>
 </div>
@@ -73,48 +73,48 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="employee : ${listEmployees}">
-                    <td><a th:href="@{/showFormForUpdate/{id}(id=${employee.id})}" class="btn btn-primary btn-sm">Alterar</a></td>
+                <tr th:each="thirdPartyEmployee : ${listEmployees}">
+                    <td><a th:href="@{/showFormForUpdate/{id}(id=${thirdPartyEmployee.id})}" class="btn btn-primary btn-sm">Alterar</a></td>
                     <td>
                         <script type="text/javascript">
                             function confirmDeletion() {
                                 return confirm("Tem certeza de que deseja excluir este contrato ?");
                             }
                         </script>
-                        <a th:href="@{/deleteEmployee/{id}(id=${employee.id})}"
+                        <a th:href="@{/deleteEmployee/{id}(id=${thirdPartyEmployee.id})}"
                            class="btn btn-danger btn-sm"
                            onclick="return confirmDeletion();">
                             Apagar
                         </a>
                     </td>
-                    <td th:text="${employee.id}"></td>
-                    <td th:text="${employee.legalOps}"></td>
-                    <td th:text="${employee.orderService}"></td>
-                    <td th:text="${employee.functionName}"></td>
-                    <td th:text="${employee.role}"></td>
-                    <td th:text="${employee.completeName}"></td>
-                    <td th:text="${employee.cpf}"></td>
-                    <td th:text="${employee.email}"></td>
-                    <td th:text="${employee.fup}"></td>
-                    <td th:text="${employee.statusOrderService}"></td>
-                    <td th:text="${employee.vendor}"></td>
-                    <td th:text="${employee.initialDateLegalOps}"></td>
-                    <td th:text="${employee.finalDateLegalOps}"></td>
-                    <td th:text="${employee.initialDateRecourse}"></td>
-                    <td th:text="${employee.finalDateLegalOps}"></td>
-                    <td th:text="${employee.initialDateContract}"></td>
-                    <td th:text="${employee.finalDateContract}"></td>
-                    <td th:text="${employee.warningMaturity}"></td>
-                    <td th:text="${employee.exitDate}"></td>
-                    <td th:text="${employee.valueContract}"></td>
-                    <td th:text="${employee.analysisHR}"></td>
-                    <td th:text="${employee.vertical}"></td>
-                    <td th:text="${employee.squad}"></td>
-                    <td th:text="${employee.bU}"></td>
-                    <td th:text="${employee.alocation}"></td>
-                    <td th:text="${employee.borrowedTo}"></td>
-                    <td th:text="${employee.observation}"></td>
-                    <td th:text="${employee.manager}"></td>
+                    <td th:text="${thirdPartyEmployee.id}"></td>
+                    <td th:text="${thirdPartyEmployee.legalOps}"></td>
+                    <td th:text="${thirdPartyEmployee.orderService}"></td>
+                    <td th:text="${thirdPartyEmployee.functionName}"></td>
+                    <td th:text="${thirdPartyEmployee.role}"></td>
+                    <td th:text="${thirdPartyEmployee.completeName}"></td>
+                    <td th:text="${thirdPartyEmployee.cpf}"></td>
+                    <td th:text="${thirdPartyEmployee.email}"></td>
+                    <td th:text="${thirdPartyEmployee.fup}"></td>
+                    <td th:text="${thirdPartyEmployee.statusOrderService}"></td>
+                    <td th:text="${thirdPartyEmployee.vendor}"></td>
+                    <td th:text="${thirdPartyEmployee.initialDateLegalOps}"></td>
+                    <td th:text="${thirdPartyEmployee.finalDateLegalOps}"></td>
+                    <td th:text="${thirdPartyEmployee.initialDateRecourse}"></td>
+                    <td th:text="${thirdPartyEmployee.finalDateLegalOps}"></td>
+                    <td th:text="${thirdPartyEmployee.initialDateContract}"></td>
+                    <td th:text="${thirdPartyEmployee.finalDateContract}"></td>
+                    <td th:text="${thirdPartyEmployee.warningMaturity}"></td>
+                    <td th:text="${thirdPartyEmployee.exitDate}"></td>
+                    <td th:text="${thirdPartyEmployee.valueContract}"></td>
+                    <td th:text="${thirdPartyEmployee.analysisHR}"></td>
+                    <td th:text="${thirdPartyEmployee.vertical}"></td>
+                    <td th:text="${thirdPartyEmployee.squad}"></td>
+                    <td th:text="${thirdPartyEmployee.bU}"></td>
+                    <td th:text="${thirdPartyEmployee.alocation}"></td>
+                    <td th:text="${thirdPartyEmployee.borrowedTo}"></td>
+                    <td th:text="${thirdPartyEmployee.observation}"></td>
+                    <td th:text="${thirdPartyEmployee.manager}"></td>
                 </tr>
                 </tbody>
             </table>

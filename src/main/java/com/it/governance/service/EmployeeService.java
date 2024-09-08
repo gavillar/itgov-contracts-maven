@@ -2,11 +2,11 @@ package com.it.governance.service;
 
 import java.util.List;
 
-import com.it.governance.model.Employee;
+import com.it.governance.model.ThirdPartyEmployee;
 
 public interface EmployeeService {
-	List<Employee> getAllEmployees();
-	void saveEmployee(Employee employee);
-	Employee getEmployeeById(long id);
+	List<ThirdPartyEmployee> getAllEmployees();
+	void saveEmployee(ThirdPartyEmployee thirdPartyEmployee);
+	ThirdPartyEmployee getEmployeeById(long id);
 	void deleteEmployeeById(long id);
 }
