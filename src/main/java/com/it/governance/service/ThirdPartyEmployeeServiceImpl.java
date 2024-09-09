@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import com.it.governance.repository.ThirdPartyEmployeeRepository;
 
 @Service
-public class EmployeeServiceImpl implements EmployeeService {
+public class ThirdPartyEmployeeServiceImpl implements ThirdPartyEmployeeService {
 	
 	@Autowired
 	private ThirdPartyEmployeeRepository thirdPartyEmployeeRepository;

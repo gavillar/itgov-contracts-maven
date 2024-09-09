@@ -36,25 +36,42 @@
 
 <div class="parent">
     <div class="table-third-party-employees">
-        <a th:href="@{/}" class="btn btn-primary btn-sm btn-add">Adicionar subistituído ></a>
+        <a th:href="@{/showNewSubstituteEmployeeForm}" class="btn btn-primary btn-sm btn-add">Adicionar subistituído ></a>
         <table class="table table-bordered table-responsive">
             <thead>
             <tr>
                 <th>Alterar</th>
                 <th>Apagar</th>
                 <th>ID</th>
-                <th>Cargo</th>
-                <th>Papel</th>
                 <th>Nome Completo</th>
-                <th>CPF</th>
                 <th>Email</th>
-                <th>Vendor</th>
-                <th>Data Saída</th>
-                <th>Vertical</th>
-                <th>Squad</th>
-                <th>Gestor Direto</th>
+                <th>Nome de quem substituiu</th>
+                <th>Email de quem substituiu</th>
             </tr>
             </thead>
+            <tbody>
+            <tr th:each="thirdPartySubstituteEmployee : ${listSubstituteEmployees}">
+                <td><a th:href="@{/showSubstituteFormForUpdate/{id}(id=${thirdPartySubstituteEmployee.id})}" class="btn btn-primary btn-sm">Alterar</a></td>
+                <td>
+                    <script type="text/javascript">
+                            function confirmDeletion() {
+                                return confirm("Tem certeza de que deseja excluir esta substituição ?");
+                            }
+                        </script>
+                    <a th:href="@{/deleteSubstituteEmployee/{id}(id=${thirdPartySubstituteEmployee.id})}"
+                       class="btn btn-danger btn-sm"
+                       onclick="return confirmDeletion();">
+                        Apagar
+                    </a>
+                </td>
+                <td th:text="${thirdPartySubstituteEmployee.id}"></td>
+                <td th:text="${thirdPartySubstituteEmployee.completeName}"></td>
+                <td th:text="${thirdPartySubstituteEmployee.email}"></td>
+                <td th:text="${thirdPartySubstituteEmployee.completeNameSubstitute}"></td>
+                <td th:text="${thirdPartySubstituteEmployee.emailSubstitute}"></td>
+
+            </tr>
+            </tbody>
         </table>
     </div>
 </div>

@@ -2,53 +2,61 @@ package com.it.governance.model;
 
 import jakarta.persistence.*;
 
-//@Entity
-//@Table(name = "substitute-third-party-employee")
+@Entity
+@Table(name = "substitute-third-party-employee")
 public class ThirdPartySubstituteEmployee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private long id;
-
-    @Column(name = "legalOps")
-    private String legalOps;
-
-    @Column(name = "orderService")
-    private String orderService;
-
-    @Column(name = "functionName")
-    private String functionName;
-
-    @Column(name = "role")
-    private String role;
-
     @Column(name = "completeName")
     private String completeName;
-
-    @Column(name = "cpf")
-    private String cpf;
 
     @Column(name = "email")
     private String email;
 
-    @Column(name = "vendor")
-    private String vendor;
+    @Column(name = "completeNameSubstitute")
+    private String completeNameSubstitute;
 
-    @Column(name = "subistituionDate")
-    private String subistituionDate;
+    @Column(name = "emailSubstitute")
+    private String emailSubstitute;
 
+    public long getId() {
+        return id;
+    }
 
-    @Column(name = "vertical")
-    private String vertical;
+    public void setId(long id) {
+        this.id = id;
+    }
 
-    @Column(name = "squad")
-    private String squad;
+    public String getCompleteName() {
+        return completeName;
+    }
 
-    @Column(name = "alocation")
-    private String alocation;
+    public void setCompleteName(String completeName) {
+        this.completeName = completeName;
+    }
 
-    @Column(name = "oldEmail")
-    private String oldEmail;
+    public String getEmail() {
+        return email;
+    }
 
-    @Column(name = "manager")
-    private String manager;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCompleteNameSubstitute() {
+        return completeNameSubstitute;
+    }
+
+    public void setCompleteNameSubstitute(String completeNameSubstitute) {
+        this.completeNameSubstitute = completeNameSubstitute;
+    }
+
+    public String getEmailSubstitute() {
+        return emailSubstitute;
+    }
+
+    public void setEmailSubstitute(String emailSubstitute) {
+        this.emailSubstitute = emailSubstitute;
+    }
 }

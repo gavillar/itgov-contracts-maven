@@ -1,7 +1,9 @@
 package com.it.governance.controller;
 
 import com.it.governance.model.ThirdPartyEmployee;
-import com.it.governance.service.EmployeeService;
+import com.it.governance.model.ThirdPartySubstituteEmployee;
+import com.it.governance.service.ThirdPartyEmployeeService;
+import com.it.governance.service.ThirdPartySubstituteEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,39 +16,39 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class ThirdPartyEmployeeSubstituteController {
 
     @Autowired
-    private EmployeeService employeeService;
+    private ThirdPartySubstituteEmployeeService thirdPartySubstituteEmployeeService;
 
     // display list of employees
     @GetMapping("/showSubstituionHistoryEmployees")
     public String ViewHomePage(Model model) {
-       // model.addAttribute("listEmployees", employeeService.getAllEmployees());
+        model.addAttribute("listSubstituteEmployees", thirdPartySubstituteEmployeeService.getAllSubstituteEmployees());
         return "third_party_substitute_employees";
     }
 
-    @GetMapping("/showNewSubstituionEmployeeForm")
+    @GetMapping("/showNewSubstituteEmployeeForm")
     public String showEmployeeForm(Model model) {
-        ThirdPartyEmployee thirdPartyEmployee = new ThirdPartyEmployee();
-      //  model.addAttribute("employee", thirdPartyEmployee);
-        return "substituion_new_employee";
+        ThirdPartySubstituteEmployee thirdPartySubstituteEmployee = new ThirdPartySubstituteEmployee();
+        model.addAttribute("thirdPartySubstituteEmployee", thirdPartySubstituteEmployee);
+        return "new_substitute_employee";
     }
 
-    @PostMapping("/saveSubistituionEmployee")
-    public String saveEmployee(@ModelAttribute("employee") ThirdPartyEmployee thirdPartyEmployee) {
+    @PostMapping("/saveSubstituteEmployee")
+    public String saveEmployee(@ModelAttribute("thirdPartySubstituteEmployee") ThirdPartySubstituteEmployee thirdPartySubstituteEmployee) {
         // save employee to database
-     //   employeeService.saveEmployee(thirdPartyEmployee);
-        return "redirect:/showSubstituionHistoryEmployee";
+        thirdPartySubstituteEmployeeService.saveSubstituteEmployee(thirdPartySubstituteEmployee);
+        return "redirect:/showSubstituionHistoryEmployees";
     }
 
-    @GetMapping("/showSubstituionFormForUpdate/{id}")
+    @GetMapping("/showSubstituteFormForUpdate/{id}")
     public String showFormForUpdate(@PathVariable( value = "id") long id, Model model) {
-        ThirdPartyEmployee thirdPartyEmployee = employeeService.getEmployeeById(id);
-    //    model.addAttribute("employee", thirdPartyEmployee);
-        return "substituion_update_employee";
+        ThirdPartySubstituteEmployee thirdPartySubstituteEmployee = thirdPartySubstituteEmployeeService.getEmployeeSubstituteById(id);
+        model.addAttribute("thirdPartySubstituteEmployee", thirdPartySubstituteEmployee);
+        return "update_substitute_employee";
     }
 
-    @GetMapping("/deleteSubstituionEmployee/{id}")
+    @GetMapping("/deleteSubstituteEmployee/{id}")
     public String deleteEmployee(@PathVariable ( value = "id") long id, Model model) {
-    //    this.employeeService.deleteEmployeeById(id);
+        this.thirdPartySubstituteEmployeeService.deleteEmployeeById(id);
         return "redirect:/showSubstituionHistoryEmployee";
     }
 }
