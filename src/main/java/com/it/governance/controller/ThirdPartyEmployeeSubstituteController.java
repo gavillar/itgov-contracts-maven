@@ -1,8 +1,6 @@
 package com.it.governance.controller;
 
-import com.it.governance.model.ThirdPartyEmployee;
 import com.it.governance.model.ThirdPartySubstituteEmployee;
-import com.it.governance.service.ThirdPartyEmployeeService;
 import com.it.governance.service.ThirdPartySubstituteEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -49,6 +47,6 @@ public class ThirdPartyEmployeeSubstituteController {
     @GetMapping("/deleteSubstituteEmployee/{id}")
     public String deleteEmployee(@PathVariable ( value = "id") long id, Model model) {
         this.thirdPartySubstituteEmployeeService.deleteEmployeeById(id);
-        return "redirect:/showSubstituionHistoryEmployee";
+        return "redirect:/showSubstituionHistoryEmployees";
     }
 }

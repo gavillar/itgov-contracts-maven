@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "third-party-employee")
+@Table(name = "third_party_employee")
 public class ThirdPartyEmployee {
 	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
