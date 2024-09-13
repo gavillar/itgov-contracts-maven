@@ -1,11 +1,7 @@
 package com.it.governance.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.it.governance.security.AttributeEncryptor;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "third_party_employee")
@@ -14,13 +10,13 @@ public class ThirdPartyEmployee {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private long id;
-	
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "legalOps")
 	private String legalOps;
-	
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "orderService")
 	private String orderService;
-	
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "functionName")
 	private String functionName;
 	
@@ -29,19 +25,20 @@ public class ThirdPartyEmployee {
 	
 	@Column(name = "completeName")
 	private String completeName;
-	
+
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "cpf")
 	private String cpf;
 	
 	@Column(name = "email")
 	private String email;
-	
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "fup")
 	private String fup;
-	
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "statusOrderService")
 	private String statusOrderService;
-	
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "vendor")
 	private String vendor;
 	
@@ -63,22 +60,22 @@ public class ThirdPartyEmployee {
 	
 	@Column(name = "warningMaturity")
 	private String warningMaturity;
-	
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "exitDate")
 	private String exitDate;
-	
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "valueContract")
-	private double valueContract;
-	
+	private String valueContract;
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "analysisHR")
 	private String analysisHR;
-	
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "vertical")
 	private String vertical;
-	
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "squad")
 	private String squad;
-	
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "bU")
 	private String bU;
 	
@@ -93,7 +90,7 @@ public class ThirdPartyEmployee {
 	
 	@Column(name = "oldEmail")
 	private String oldEmail;
-	
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "manager")
 	private String manager;
 	
@@ -201,10 +198,10 @@ public class ThirdPartyEmployee {
 	public void setExitDate(String exitDate) {
 		this.exitDate = exitDate;
 	}
-	public double getValueContract() {
+	public String getValueContract() {
 		return valueContract;
 	}
-	public void setValueContract(double valueContract) {
+	public void setValueContract(String valueContract) {
 		this.valueContract = valueContract;
 	}
 	public String getAnalysisHR() {

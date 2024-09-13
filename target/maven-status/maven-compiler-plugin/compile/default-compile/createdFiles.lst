@@ -7,8 +7,10 @@ com\it\governance\service\ThirdPartyEmployeeServiceImpl.class
 com\it\governance\controller\HomeController.class
 com\it\governance\repository\ThirdPartyEmployeeRepository.class
 com\it\governance\service\ThirdPartyEmployeeSubstituteServiceImpl.class
+com\it\governance\security\Encryption.class
 com\it\governance\controller\ThirdPartyEmployeeSubstituteController.class
 com\it\governance\config\ConfigurationSecurity.class
 com\it\governance\controller\LoginController.class
 com\it\governance\ItgovContractsMavenApplication.class
+com\it\governance\security\AttributeEncryptor.class
 com\it\governance\repository\ThirdPartySubstituteEmployeeRepository.class
