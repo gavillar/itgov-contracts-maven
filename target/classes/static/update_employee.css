@@ -1,0 +1,28 @@
+ .table-container {
+            background-color: #dcdcdc;
+            border-radius: 8px;
+        }
+        .container {
+            margin-left: 80px;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+        }
+        .header img {
+            margin-right: 15px;
+        }
+
+         .btn-info {
+            background-color: #0056b3;
+            border-color: #0056b3;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        .btn-info:hover {
+            background-color: #004494;
+            border-color: #003d79;
+        }
+        .btn-info:focus, .btn-info.focus {

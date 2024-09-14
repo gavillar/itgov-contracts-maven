@@ -52,7 +52,7 @@
     align-items: left;
 }
 
-.table-third-party-employees {
+.table_substitute_employee {
     background-color: #f0f0f0;
     max-height: calc(99vh - 100px);
     width: 99%;
@@ -63,15 +63,15 @@
 
 }
 
-.table-third-party-employees tbody tr {
+.table_substitute_employee tbody tr {
     background-color: #d0d0d0;
 }
 
-.table-third-party-employees tbody tr:nth-child(even) {
+.table_substitute_employee tbody tr:nth-child(even) {
     background-color: #c0c0c0;
 }
 
-.table-third-party-employees tbody tr:nth-child(odd) {
+.table_substitute_employee tbody tr:nth-child(odd) {
     background-color: #d0d0d0;
 }
 

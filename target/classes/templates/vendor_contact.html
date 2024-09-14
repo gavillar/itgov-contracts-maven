@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato Vendor</title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/vendors/iconly/bold.css">
+    <link rel="stylesheet" href="/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="/assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="shortcut icon" href="/assets/images/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="vendor_contact.css">
+</head>
+
+<body>
+
+<div id="app">
+    <div id="top-menu">
+        <div class="logo">
+            <a href="dashboard.html"><img src="/assets/images/logo/logo-design2.png" width="150" alt="Logo"></a>
+        </div>
+        <ul class="menu">
+            <li><a href="/"><i class="bi bi-grid-fill"></i> Dashboard</a></li>
+            <li ><a href="/showThirdPartyEmployees"><i class="bi bi-grid-fill"></i> Terceiros</a></li>
+            <li class="active"><a href="/showVendorContacts"><i class="bi bi-grid-fill"></i> Contatos</a></li>
+            <li><a href="/terceiros"><i class="bi bi-grid-fill"></i> Acessos Prestadores</a></li>
+            <li><a href="/CLT"><i class="bi bi-grid-fill"></i> CLT</a></li>
+            <li><a href="/terceiros"><i class="bi bi-grid-fill"></i> Visão das Squads</a></li>
+            <li><a href="/terceiros"><i class="bi bi-grid-fill"></i> Funcionários</a></li>
+            <li ><a href="/showSubstituionHistoryEmployees"><i class="bi bi-grid-fill"></i> Histórico de Substituições</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="parent">
+    <div class="table_vendor_contact">
+        <a th:href="@{/showVendorContactForm}" class="btn btn-primary btn-sm btn-add">Adicionar vendor ></a>
+        <table class="table table-bordered table-responsive">
+            <thead>
+            <tr>
+                <th>Alterar</th>
+                <th>Apagar</th>
+                <th>ID</th>
+                <th>Vendor</th>
+                <th>Contato</th>
+                <th>Email</th>
+                <th>Telefone</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each=" vendorContact: ${listVendorContact}">
+                <td><a th:href="@{/showVendorContactFormForUpdate/{id}(id=${vendorContact.id})}" class="btn btn-primary btn-sm">Alterar</a></td>
+                <td>
+                    <script type="text/javascript">
+                            function confirmDeletion() {
+                                return confirm("Tem certeza de que deseja excluir esta substituição ?");
+                            }
+                        </script>
+                    <a th:href="@{/deleteVendorContact/{id}(id=${vendorContact.id})}"
+                       class="btn btn-danger btn-sm"
+                       onclick="return confirmDeletion();">
+                        Apagar
+                    </a>
+                </td>
+                <td th:text="${vendorContact.id}"></td>
+                <td th:text="${vendorContact.vendor}"></td>
+                <td th:text="${vendorContact.contact}"></td>
+                <td th:text="${vendorContact.email}"></td>
+                <td th:text="${vendorContact.cellPhone}"></td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+
+<script src="/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendors/apexcharts/apexcharts.js"></script>
+
+</body>
+</html>

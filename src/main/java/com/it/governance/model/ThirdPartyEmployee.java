@@ -19,7 +19,7 @@ public class ThirdPartyEmployee {
 	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "functionName")
 	private String functionName;
-	
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "role")
 	private String role;
 	
@@ -41,23 +41,23 @@ public class ThirdPartyEmployee {
 	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "vendor")
 	private String vendor;
-	
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "initialDateLegalOps")
 	private String initialDateLegalOps;
-	
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "finalDateLegalOps")
 	private String finalDateLegalOps;
-	
-	
+
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "initialDateRecourse")
 	private String initialDateRecourse;
-	
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "initialDateContract")
 	private String initialDateContract;
-	
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "finalDateContract")
 	private String finalDateContract;
-	
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "warningMaturity")
 	private String warningMaturity;
 	@Convert(converter = AttributeEncryptor.class)
@@ -78,16 +78,16 @@ public class ThirdPartyEmployee {
 	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "bU")
 	private String bU;
-	
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "alocation")
 	private String alocation;
-	
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "borrowedTo")
 	private String borrowedTo;
-	
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "observation")
 	private String observation;
-	
+	@Convert(converter = AttributeEncryptor.class)
 	@Column(name = "oldEmail")
 	private String oldEmail;
 	@Convert(converter = AttributeEncryptor.class)

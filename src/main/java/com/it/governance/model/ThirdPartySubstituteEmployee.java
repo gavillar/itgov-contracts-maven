@@ -1,26 +1,25 @@
 package com.it.governance.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.it.governance.security.AttributeEncryptor;
+import jakarta.persistence.*;
+
 @Entity
 @Table(name = "substitute_third_party_employee")
 public class ThirdPartySubstituteEmployee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private long id;
+
     @Column(name = "completeName")
     private String completeName;
 
+    @Convert(converter = AttributeEncryptor.class)
     @Column(name = "email")
     private String email;
-
+    @Convert(converter = AttributeEncryptor.class)
     @Column(name = "completeNameSubstitute")
     private String completeNameSubstitute;
-
+    @Convert(converter = AttributeEncryptor.class)
     @Column(name = "emailSubstitute")
     private String emailSubstitute;
 
