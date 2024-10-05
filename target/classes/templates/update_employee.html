@@ -15,34 +15,90 @@
         <h2>Atualizar OS</h2>
 
         <form action="#" th:action="@{/saveEmployee}" th:object="${thirdPartyEmployee}" method="post">
-            <input type="hidden" th:field="*{id}" /> <!-- Campo oculto para o ID -->
-			<input type="text" th:field="*{legalOps}" placeholder="Número LegalOps" class="form-control mb-4 col-4">
-            <input type="text" th:field="*{orderService}" placeholder="Número OS" class="form-control mb-4 col-4">
-            <input type="text" th:field="*{functionName}" placeholder="Cargo" class="form-control mb-4 col-4">
-            <input type="text" th:field="*{role}" placeholder="Papel" class="form-control mb-4 col-4">
-            <input type="text" th:field="*{completeName}" placeholder="Nome Completo" class="form-control mb-4 col-4">
-            <input type="text" th:field="*{cpf}" placeholder="CPF" class="form-control mb-4 col-4">
-            <input type="text" th:field="*{email}" placeholder="Email" class="form-control mb-4 col-4">
-            <input type="text" th:field="*{fup}" placeholder="FUP" class="form-control mb-4 col-4">
-            <input type="text" th:field="*{statusOrderService}" placeholder="Status OS" class="form-control mb-4 col-4">
-            <input type="text" th:field="*{vendor}" placeholder="Vendor" class="form-control mb-4 col-4">
-            <input type="date" th:field="*{initialDateLegalOps}" placeholder="Data Início LegalOps" class="form-control mb-4 col-4">
-            <input type="date" th:field="*{finalDateLegalOps}" placeholder="Data Fim LegalOps" class="form-control mb-4 col-4">
-            <input type="date" th:field="*{initialDateRecourse}" placeholder="Data Início do Recurso" class="form-control mb-4 col-4">
-            <input type="date" th:field="*{initialDateContract}" placeholder="Início do Contrato" class="form-control mb-4 col-4">
-            <input type="date" th:field="*{finalDateContract}" placeholder="Data final do Contrato" class="form-control mb-4 col-4">
-            <input type="date" th:field="*{warningMaturity}" placeholder="Aviso do Vencimento" class="form-control mb-4 col-4">
-            <input type="date" th:field="*{exitDate}" placeholder="Data saída" class="form-control mb-4 col-4">
-            <input type="text" th:field="*{valueContract}" placeholder="Valor" class="form-control mb-4 col-4">
-            <input type="text" th:field="*{analysisHR}" placeholder="Análise RH" class="form-control mb-4 col-4">
-            <input type="text" th:field="*{vertical}" placeholder="Vertical" class="form-control mb-4 col-4">
-            <input type="text" th:field="*{squad}" placeholder="Squad" class="form-control mb-4 col-4">
-            <input type="text" th:field="*{bU}" placeholder="BU" class="form-control mb-4 col-4">
-            <input type="text" th:field="*{alocation}" placeholder="Alocação" class="form-control mb-4 col-4">
-            <input type="text" th:field="*{borrowedTo}" placeholder="Emprestado Para" class="form-control mb-4 col-4">
-            <input type="text" th:field="*{observation}" placeholder="Observação" class="form-control mb-4 col-4">
-            <input type="text" th:field="*{oldEmail}" placeholder="Email antigo" class="form-control mb-4 col-4">
-            <input type="text" th:field="*{manager}" placeholder="Gestor Direto" class="form-control mb-4 col-4">
+
+            <input type="hidden" th:field="*{id}" />
+
+            <label for="legalOps">Numero LegalOps</label>
+            <input type="text" th:field="*{legalOps}" id="legalOps" class="form-control mb-4 col-4">
+
+            <label for="orderService">Numero OS</label>
+            <input type="text" th:field="*{orderService}" id="orderService" class="form-control mb-4 col-4">
+
+            <label for="functionName">Cargo</label>
+            <input type="text" th:field="*{functionName}" id="functionName" class="form-control mb-4 col-4">
+
+            <label for="role">Papel</label>
+            <input type="text" th:field="*{role}" id="role" class="form-control mb-4 col-4">
+
+            <label for="completeName">Nome Completo</label>
+            <input type="text" th:field="*{completeName}" id="completeName" class="form-control mb-4 col-4">
+
+            <label for="cpf">CPF</label>
+            <input type="text" th:field="*{cpf}" id="cpf" class="form-control mb-4 col-4">
+
+            <label for="email">Email</label>
+            <input type="text" th:field="*{email}" id="email" class="form-control mb-4 col-4">
+
+            <label for="fup">FUP</label>
+            <input type="text" th:field="*{fup}" id="fup" class="form-control mb-4 col-4">
+
+            <label for="statusOrderService">Status OS</label>
+            <input type="text" th:field="*{statusOrderService}" id="statusOrderService" class="form-control mb-4 col-4">
+
+            <label for="vendor">Vendor</label>
+            <input type="text" th:field="*{vendor}" id="vendor" class="form-control mb-4 col-4">
+
+            <label for="initialDateLegalOps">Data Inicio LegalOps</label>
+            <input type="date" th:field="*{initialDateLegalOps}" id="initialDateLegalOps" class="form-control mb-4 col-4">
+
+            <label for="finalDateLegalOps">Data Fim LegalOps</label>
+            <input type="date" th:field="*{finalDateLegalOps}" id="finalDateLegalOps" class="form-control mb-4 col-4">
+
+            <label for="initialDateRecourse">Data Inicio do Recurso</label>
+            <input type="date" th:field="*{initialDateRecourse}" id="initialDateRecourse" class="form-control mb-4 col-4">
+
+            <label for="initialDateContract">Inicio do Contrato</label>
+            <input type="date" th:field="*{initialDateContract}" id="initialDateContract" class="form-control mb-4 col-4">
+
+            <label for="finalDateContract">Data final do Contrato</label>
+            <input type="date" th:field="*{finalDateContract}" id="finalDateContract" class="form-control mb-4 col-4">
+
+            <label for="warningMaturity">Aviso do Vencimento</label>
+            <input type="date" th:field="*{warningMaturity}" id="warningMaturity" class="form-control mb-4 col-4">
+
+            <label for="exitDate">Data saida</label>
+            <input type="date" th:field="*{exitDate}" id="exitDate" class="form-control mb-4 col-4">
+
+            <label for="valueContract">Valor</label>
+            <input type="text" th:field="*{valueContract}" id="valueContract" class="form-control mb-4 col-4">
+
+            <label for="analysisHR">Analise RH</label>
+            <input type="text" th:field="*{analysisHR}" id="analysisHR" class="form-control mb-4 col-4">
+
+            <label for="vertical">Vertical</label>
+            <input type="text" th:field="*{vertical}" id="vertical" class="form-control mb-4 col-4">
+
+            <label for="squad">Squad</label>
+            <input type="text" th:field="*{squad}" id="squad" class="form-control mb-4 col-4">
+
+            <label for="bU">BU</label>
+            <input type="text" th:field="*{bU}" id="bU" class="form-control mb-4 col-4">
+
+            <label for="alocation">Alocacao</label>
+            <input type="text" th:field="*{alocation}" id="alocation" class="form-control mb-4 col-4">
+
+            <label for="borrowedTo">Emprestado Para</label>
+            <input type="text" th:field="*{borrowedTo}" id="borrowedTo" class="form-control mb-4 col-4">
+
+            <label for="observation">Observacao</label>
+            <input type="text" th:field="*{observation}" id="observation" class="form-control mb-4 col-4">
+
+            <label for="oldEmail">Email antigo</label>
+            <input type="text" th:field="*{oldEmail}" id="oldEmail" class="form-control mb-4 col-4">
+
+            <label for="manager">Gestor Direto</label>
+            <input type="text" th:field="*{manager}" id="manager" class="form-control mb-4 col-4">
+
 
             <button type="submit" class="btn btn-info col-2">Atualizar</button>
 

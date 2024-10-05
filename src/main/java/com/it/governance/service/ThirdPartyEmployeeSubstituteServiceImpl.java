@@ -1,11 +1,13 @@
 package com.it.governance.service;
 
+import com.it.governance.model.ThirdPartyEmployee;
 import com.it.governance.model.ThirdPartySubstituteEmployee;
 import com.it.governance.repository.ThirdPartySubstituteEmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ThirdPartyEmployeeSubstituteServiceImpl implements ThirdPartySubstituteEmployeeService {
@@ -24,8 +26,14 @@ public class ThirdPartyEmployeeSubstituteServiceImpl implements ThirdPartySubsti
 
     @Override
     public ThirdPartySubstituteEmployee getEmployeeSubstituteById(long id) {
-
-        return null;
+        Optional<ThirdPartySubstituteEmployee> optional = thirdPartySubstituteEmployeeRepository.findById(id);
+        ThirdPartySubstituteEmployee thirdPartySubstituteEmployee = null;
+        if(optional.isPresent()) {
+            thirdPartySubstituteEmployee = optional.get();
+        } else {
+            throw new RuntimeException("Employee not found");
+        }
+        return thirdPartySubstituteEmployee;
     }
 
     @Override

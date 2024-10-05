@@ -14,10 +14,18 @@
     <h1>Cadastrar Vendor</h1>
 
     <form action="#" th:action="@{/saveVendorContact}" th:object="${vendorContact}" method="post">
-        <input type="text" th:field="*{vendor}" placeholder="Vendor" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{contact}" placeholder="Contato" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{email}" placeholder="Email" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{cellPhone}" placeholder="Telefone" class="form-control mb-4 col-4">
+
+        <label for="vendor">Vendor</label>
+        <input type="text" id="vendor" th:field="*{vendor}" class="form-control mb-4 col-4">
+
+        <label for="contact">Contato</label>
+        <input type="text" id="contact" th:field="*{contact}" class="form-control mb-4 col-4">
+
+        <label for="email">Email</label>
+        <input type="text" id="email" th:field="*{email}" class="form-control mb-4 col-4">
+
+        <label for="cellPhone">Telefone</label>
+        <input type="text" id="cellPhone" th:field="*{cellPhone}" class="form-control mb-4 col-4">
 
         <button type="submit" class="btn btn-info col-2">Cadastrar</button>
     </form>

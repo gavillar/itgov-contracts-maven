@@ -41,7 +41,10 @@ public class ThirdPartyEmployeeSubstituteController {
     public String showFormForUpdate(@PathVariable( value = "id") long id, Model model) {
         ThirdPartySubstituteEmployee thirdPartySubstituteEmployee = thirdPartySubstituteEmployeeService.getEmployeeSubstituteById(id);
         model.addAttribute("thirdPartySubstituteEmployee", thirdPartySubstituteEmployee);
-        return "update_substitute_employee";
+        if (thirdPartySubstituteEmployee.getCompleteNameSubstitute() != null) {
+            return "update_substitute_employee";
+        }
+        return null;
     }
 
     @GetMapping("/deleteSubstituteEmployee/{id}")

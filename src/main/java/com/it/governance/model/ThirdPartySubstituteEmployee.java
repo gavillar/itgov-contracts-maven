@@ -10,17 +10,17 @@ public class ThirdPartySubstituteEmployee {
     @Id
     private long id;
 
-    @Column(name = "completeName")
+    @Column(name = "complete_name")
     private String completeName;
 
     @Convert(converter = AttributeEncryptor.class)
     @Column(name = "email")
     private String email;
     @Convert(converter = AttributeEncryptor.class)
-    @Column(name = "completeNameSubstitute")
+    @Column(name = "complete_name_substitute")
     private String completeNameSubstitute;
     @Convert(converter = AttributeEncryptor.class)
-    @Column(name = "emailSubstitute")
+    @Column(name = "email_substitute")
     private String emailSubstitute;
 
     public long getId() {

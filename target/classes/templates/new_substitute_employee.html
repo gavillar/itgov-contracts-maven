@@ -14,10 +14,17 @@
   <h1>Cadastrar substituto</h1>
 
   <form action="#" th:action="@{/saveSubstituteEmployee}" th:object="${thirdPartySubstituteEmployee}" method="post">
-    <input type="text" th:field="*{completeName}" placeholder="Nome completo" class="form-control mb-4 col-4">
-    <input type="text" th:field="*{email}" placeholder="Email" class="form-control mb-4 col-4">
-    <input type="text" th:field="*{completeNameSubstitute}" placeholder="Nome de quem substituiu" class="form-control mb-4 col-4">
-    <input type="text" th:field="*{emailSubstitute}" placeholder="Email de quem substituiu" class="form-control mb-4 col-4">
+    <label for="completeName">Nome Completo</label>
+    <input type="text" id="completeName" th:field="*{completeName}" placeholder="" class="form-control mb-4 col-4">
+
+    <label for="email">Email</label>
+    <input type="text" id="email" th:field="*{email}" class="form-control mb-4 col-4">
+
+    <label for="email">Nome de quem substituiu</label>
+    <input type="text" id="completeNameSubstitute" th:field="*{completeNameSubstitute}" class="form-control mb-4 col-4">
+
+    <label for="emailSubstitute">Email de quem substituiu</label>
+    <input type="text" id="emailSubstitute" th:field="*{emailSubstitute}" placeholder="" class="form-control mb-4 col-4">
 
     <button type="submit" class="btn btn-info col-2">Cadastrar</button>
   </form>
